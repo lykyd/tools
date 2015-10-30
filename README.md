@@ -241,6 +241,14 @@ root: ???
 - drush pm-list --type=Module --status=enabled : list module
 
 ## Angular
+### Directives examples
+<pre>ng-controller = "StoreController as store";</pre>
+<pre>ng-repeat = "product in store.products";</pre>
+<pre>ng-click = "tab.tabSet(1)";</pre>
+<pre>ng-class = "{ active: tab.isSet(2) }";</pre>
+<pre>ng-show/ng-hide = "tab.isSet(1)";</pre>
+<pre>ng-src = "image";</pre>
+
 ### The Service Recipe
 --- root.js<br>
 <pre>angular.module("root", ["services"])
