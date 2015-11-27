@@ -184,9 +184,12 @@ OR
 or
 - tail -f error.log (ctrl K to clean)
 
-**DNS record**
+**DNS record & nameservers**
 - dig iloveclaude.com
 - dig @ns1.registery iloveclaude.com (what this name server has for record)
+- dig <url>: what this name server has for record
+- nslookup <IP>: give name of the host
+- whois <namehost>: all infos about host
 
 **Direct message**
 - ssh holly@wairarapa.local
@@ -229,6 +232,14 @@ root: ???
 
 **Copy RSA key**
 - pbcopy < ~/.ssh/id_rsa.pub
+
+Create a redirect folder link
+- ln -s /origin-folder /shortcut
+
+**VIM**
+- i : insert mode
+- ECHAP :q! : force quit without saving
+- /u : search
 
 ## Drush
 
