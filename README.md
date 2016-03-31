@@ -241,6 +241,11 @@ Create a redirect folder link
 - ECHAP :q! : force quit without saving
 - /u : search
 
+**Bower**
+- install component: bower install --save angular-toArrayFilter
+- enable component: add component in the dependencies list
+- uninstall: bower uninstall angular-toArrayFilter
+
 ## Drush
 
 - drush sql-dump > /destination/db.sql
@@ -259,6 +264,22 @@ Create a redirect folder link
 <pre>ng-class = "{ active: tab.isSet(2) }";</pre>
 <pre>ng-show/ng-hide = "tab.isSet(1)";</pre>
 <pre>ng-src = "image";</pre>
+
+### Custom directives
+<pre>angular.module('timetilleventApp')
+  .directive('eventList', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/event-list.html',
+      // link: function postLink(scope, element, attrs) {
+      //   element.text('this is the eventList directive');
+      // },
+      controller: function($scope, $rootScope, $http) {
+         ...Code here...
+      },
+      controllerAs: 'events'
+    };
+});</pre>
 
 ### The Service Recipe
 --- root.js<br>
