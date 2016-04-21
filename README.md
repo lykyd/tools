@@ -255,6 +255,8 @@ Create a redirect folder link
 - drush updb : update database
 - drush dis <modulename> : disable module
 - drush pm-list --type=Module --status=enabled : list module
+- drush up rules : update Rules module
+- drush up drupal : update Drupal Core
 
 ## Angular
 ### Directives examples
