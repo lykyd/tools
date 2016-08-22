@@ -335,3 +335,41 @@ Create a redirect folder link
 }</pre>
 
 
+## Technologies
+###MongoDB
+Base de données NoSQL dite orientée documents
+Pas besoin de scripts SQL
+Information modélisée en Json
+Grande quantité de données
+
+###Node.js
+- environnement bas niveau, creation de serveur
+- modèle non-bloquant (fait une chose en attendant qu’une autre finisse)
+
+###Yeoman
+outil générer un système et workflow pour le développement d’une web app
+
+###Grunt
+taskrunner de centaines de plugin pour automatiser des actions
+
+###Drupal 8
+- features remplacées par des fichiers config
+- twig pour la gestion des templates
+- composants Symfony2: le routing, dependencyInjection
+
+###Drupal 7
+Hook: fonction php
+- hook_node_view : update affichage node
+- hook_node_presave : update before save
+- hook_node_load : update data while load
+- hook_permission
+- hook_menu : create url
+- hook_theme : pour utiliser la fonction theme() in tpl files
+Profile building with features and Profile2 module
+
+###Git
+Submodule : the parent keeps references of child git repositories
+- bad with branches and remotes
+- only track commits
+Subtree : un seul dépôt
+
