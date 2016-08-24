@@ -266,6 +266,13 @@ Create a redirect folder link
 <pre>ng-class = "{ active: tab.isSet(2) }";</pre>
 <pre>ng-show/ng-hide = "tab.isSet(1)";</pre>
 <pre>ng-src = "image";</pre>
+<pre>angular.module("root", [])
+  .controller("index", ["$scope", function($scope) {
+    $scope.$watch('factor', function(newValue) {
+      $scope.product = newValue * 2;
+    });
+    $scope.factor = 6;
+  }]);</pre>
 
 ### Custom directives
 <pre>angular.module('timetilleventApp')
@@ -337,10 +344,10 @@ Create a redirect folder link
 
 ## Technologies
 ###MongoDB
-Base de données NoSQL dite orientée documents
-Pas besoin de scripts SQL
-Information modélisée en Json
-Grande quantité de données
+- Base de données NoSQL dite orientée documents
+- Pas besoin de scripts SQL
+- Information modélisée en Json
+- Grande quantité de données
 
 ###Node.js
 - environnement bas niveau, creation de serveur
@@ -365,11 +372,13 @@ Hook: fonction php
 - hook_permission
 - hook_menu : create url
 - hook_theme : pour utiliser la fonction theme() in tpl files
+
 Profile building with features and Profile2 module
 
 ###Git
 Submodule : the parent keeps references of child git repositories
 - bad with branches and remotes
 - only track commits
+
 Subtree : un seul dépôt
 
