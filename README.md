@@ -341,6 +341,19 @@ Create a redirect folder link
 	this.text = text;
 }</pre>
 
+## PHP
+### Render HTML
+<pre>ob_start();
+echo 'text to display';
+ob_end_flush(); OR $output = ob_get_clean();</pre>
+
+- array_shift() : strip first value out of array
+- array_pop() : strip last value
+- array_splice($array, 2) : strip two entries
+- setcookie("name", $value); print $_COOKIE["name"]
+- mysql_fetch_row() : retourne une ligne de requête sour forme array
+- PDO::FETCH_ASSOC : retourne array indexé par nom de la colonne
+
 
 ## Technologies
 ###MongoDB
