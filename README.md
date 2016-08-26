@@ -347,12 +347,54 @@ Create a redirect folder link
 echo 'text to display';
 ob_end_flush(); OR $output = ob_get_clean();</pre>
 
+### Passage par référence (fonction peut modifier variable référencée)
+<pre>function foo(&$var) {
+  $var++;
+}
+$a=5;
+foo ($a);
+// $a vaut 6 maintenant</pre>
+
+###POO
+####Classes
+=> entité regroupant variables (attributs) et fonctions (méthodes), définissant des objets
+=> instanciation: servir d’une classe pour déclarer un objet
+####Constructeur : public function __construct
+=> initialiser attributs dès la création
+=> utilise setter
+####spl_autoload_register : charger classe dynamiquement
+Constant : attribut de la classe (pas de l’objet) qui ne change jamais
+=> declaration >   const VALUE = 2;      util >    Classe::VALUE
+Static : fonction ou attribut de la classe pas appelé par l’objet
+=> decl >   public static function name()   util >    Classe::name();
+=> decl >   private static $id = 0;     util >   self::$id
+####Heritage
+=> class Fille extends Mere
+=> redéclarer fonction mere :
+<pre>public function gagnerExperience() {
+    // On appelle la méthode gagnerExperience() de la classe parente
+    parent::gagnerExperience();
+}</pre>
+####Classe abstraites
+=> abstract class Personnage : empêche d'instancier la classe, c'est une classe modèle donc on veut juste instancier ses filles
+=> classe finale est l'inverse, elle ne peut être héritée
+
 - array_shift() : strip first value out of array
 - array_pop() : strip last value
 - array_splice($array, 2) : strip two entries
+- in_array("string", $array)
 - setcookie("name", $value); print $_COOKIE["name"]
 - mysql_fetch_row() : retourne une ligne de requête sour forme array
 - PDO::FETCH_ASSOC : retourne array indexé par nom de la colonne
+- $fh = fopen('test.html', 'a'); : lecture écriture
+- fwrite($fh, '<h1>Hello world!</h1>');
+- fclose($fh);
+- unlink('test.html'); : delete file
+- unset : détruire variable
+- "===" : comparaison sur les types
+- rsort : tri array en sens inverse
+- define("CONSTANT", "Bonjour le monde.");
+- ereg_replace('four', '4', $string); : replace four par 4 dans le string
 
 
 ## Technologies
