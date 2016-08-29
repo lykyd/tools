@@ -259,6 +259,55 @@ Create a redirect folder link
 - drush up drupal : update Drupal Core
 
 ## Angular
+### Notions
+=> Scope: il se réfère au modèle, il synchronise le contrôleur et la vue en observant les changements sur ses valeurs.
+Scope est le contexte locale du contrôleur
+RootScope est le contexte globale de l’application
+
+=> Directive: marqueur sur un élément du Dom (attribut, élément, classe css) qui dit au compilateur d’attribuer un comportement spécifique à cet élément.
+- La fonction link a 3 paramètres: Le scope, l’élément html encapsulé par la directive puis les attributs de cet élément
+- La fonction compile n’accède pas au scope mais est plus adéquate pour les manipulations du DOM car appelé dès le début
+
+=> Provider: permet la création de fonction et de configuration d’objets grâce à des options
+- service: make an Api call and wrap result in a custom object
+- factories are regular functions, we can also take advantage of a new lexical scope to simulate "private" variables. This is very useful as we can hide implementation details of a given service.
+
+=> Séparer l’application en différent modules
+application pour chaque feature, pour chaque component réutilisable, un application de niveau module qui dépend des modules feature et component
+
+=> Routing: on utilise le module angular-route ngRoute pour associer une URL a un template et le contrôleur associé
+
+=> $http: service qui permet la communication entre un serveur HTTP
+<pre>$http.get(‘/url’, config).then(function success(response) {}, function error(response){});</pre>
+=> $ressource: permet de faire des requêtes server side (avant récupération des datas dans l’app)
+
+=> ‘use strict’; at the beginning of js for strict mode (no undeclared var…)
+
+=> Injection de dépendances: appeler les dépendances et Angular se charge de les instancier et de les injecter
+
+=> module.config : au lancement de l’application permet de configurer l’application, définir des variables
+ex: définir le routing, enregistrer un élément dans le cache du browser
+
+=> module.run : au lancement de l’application permet d’exécuter des méthodes 
+ex: $RootScope.baseUrl = ‘www.ici.com’ ou $watch($location.path())
+
+=> Promise : l’objet promise représente une valeur dont on a pas forcément déjà la valeur.
+=> Deferred : représente l’action grace à laquelle on aura la valeur.
+- si il résout la promesse, il lui fournit la valeur obtenu via la fonction resolve()
+- sinon il rejette la promise et fournit la raison via reject()
+
+=> $q: service angular qui permet de lancer des requêtes asynchrones (simultanées) et lire les valeurs retournées quand elles sont disponibles.
+
+=> Config functions are run during the configuration phase, before services are available.
+
+=> Optimisation du code
+- fichier séparé pour chaque controlleur, lisibilité, maintainabilité
+- désactiver le debug angular : $compileProvider.debugInfoEnabled(false);
+- limiter la logique dans les contrôleurs au profit de services, contrôleur servent à cable avec l’app
+- attendre les réponses de webservices ($get) avant chargement de page (utiliser resolve dans routage)
+- concatener et minifier les scripts avec uglify et grunt
+- utiliser le cache HTTP d’AngularJS : $http.get(URL, { cache: true }). Ainsi, la première fois que le service $http enverra une requête à une URL, la réponse sera stockée dans un cache nommé $http.
+
 ### Directives examples
 <pre>ng-controller = "StoreController as store";</pre>
 <pre>ng-repeat = "product in store.products";</pre>
@@ -340,6 +389,30 @@ Create a redirect folder link
 <pre>function Message(text) {
 	this.text = text;
 }</pre>
+
+### Unit Testing with Jasmine
+Jasmine function: toEqual, toBe, toBeDefined(), not.toBe, toContain, toBeFalsy, toBeLessThan
+It is possible to create custom matchers (toBeRomain) in the beforeEach with addMatchers
+
+<pre>'use strict';
+
+describe('Testing of the controller', function() {
+  beforeEach(module('angularDevApp'));
+
+  var scope, testKarmaController;
+
+  beforeEach(inject(function($rootScope, $controller) {
+    scope = $rootScope.$new();
+    testKarmaController = $controller('testKarmaController', {
+      $scope: scope
+    });
+  });
+
+  it('simple test', function() {
+    expect(scope.var).not.toBe(6);
+  });
+});</pre>
+
 
 ## PHP
 ### Render HTML
