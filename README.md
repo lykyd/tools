@@ -324,19 +324,60 @@ ex: $RootScope.baseUrl = ‘www.ici.com’ ou $watch($location.path())
   }]);</pre>
 
 ### Custom directives
+Isolated scope:
+- "@" Used to pass a string value into the directive
+- "=" Used to create a two-way binding to an object that is passed into the directive
+- "&" Allows an external function to be passed into the directive and invoked
+
+<pre>scope: {
+  datasource: '=',
+  action: '&'
+},
+--
+<directive action="update()" datasource="products"></directive
+--
+<li ng-repeat="product in datasource">{{product.name}}</li>
+<button ng-click="action()">
 <pre>angular.module('timetilleventApp')
   .directive('eventList', function () {
     return {
       restrict: 'E',
       templateUrl: 'views/event-list.html',
-      // link: function postLink(scope, element, attrs) {
-      //   element.text('this is the eventList directive');
-      // },
+      link: function(scope, element, attrs) {
+         element.text('this is the eventList directive');
+      },
+      compile: function(tElement, tAttrs, transclude) {
+        return {
+          pre: function preLink(scope, iElement, iAttrs, controller) { ... }, 
+          post: function postLink(scope, iElement, iAttrs, controller) { ... }
+        }
+      },
       controller: function($scope, $rootScope, $http) {
          ...Code here...
       },
       controllerAs: 'events'
     };
+});</pre>
+
+### Custom filters
+<pre>app.filter('reverse', function() {
+  return function(input, uppercase) {
+    input = input || '';
+    var output = '';
+    for (var i = 0; i < input.length; i++) {
+      output = input.charAt(i) + output;
+    }
+   if(uppercase) output = output.toUpperCase();
+   return output;
+ };
+});</pre>
+<pre>{{ text | reverse : true }}</pre>
+
+### $watch
+<pre>$scope.var = 1;
+
+$scope.$watch($scope.var, function(newVal, oldVal, scope) {
+  $scope.result = 10 * newVal;
 });</pre>
 
 ### The Service Recipe
