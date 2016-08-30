@@ -332,12 +332,11 @@ Isolated scope:
 <pre>scope: {
   datasource: '=',
   action: '&'
-},
---
-<directive action="update()" datasource="products"></directive
---
-<li ng-repeat="product in datasource">{{product.name}}</li>
-<button ng-click="action()">
+},</pre>
+<pre><directive action="update()" datasource="products"></directive></pre>
+<pre><li ng-repeat="product in datasource">{{product.name}}</li>
+<button ng-click="action()"></pre>
+
 <pre>angular.module('timetilleventApp')
   .directive('eventList', function () {
     return {
