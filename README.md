@@ -332,9 +332,11 @@ Isolated scope:
 <pre>scope: {
   datasource: '=',
   action: '&'
-},</pre>
-<pre><directive action="update()" datasource="products"></directive></pre>
-<pre><li ng-repeat="product in datasource">{{product.name}}</li>
+},
+-----
+<directive action="update()" datasource="products"></directive>
+-----
+<li ng-repeat="product in datasource">{{product.name}}</li>
 <button ng-click="action()"></pre>
 
 <pre>angular.module('timetilleventApp')
@@ -429,6 +431,28 @@ $scope.$watch($scope.var, function(newVal, oldVal, scope) {
 <pre>function Message(text) {
 	this.text = text;
 }</pre>
+
+### Factory demo
+<pre>app.factory("factoryExample", function(){
+  return{
+    service1: function(){...},
+    service2: function(){...},
+  }
+});
+
+app.controller("factoryCtrl", function($scope, factoryExample){
+  factoryExample.service1();
+});</pre>
+
+### Service demo
+<pre>app.service("serviceExample", function(){
+  this.service1 = function(){...};
+  this.service2 = function(){...};
+});
+
+app.controller("serviceCtrl", function($scope, serviceExample){
+  serviceExample.service1();
+});</pre>
 
 ### Unit Testing with Jasmine
 Jasmine function: toEqual, toBe, toBeDefined(), not.toBe, toContain, toBeFalsy, toBeLessThan
