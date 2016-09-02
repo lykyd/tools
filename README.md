@@ -330,15 +330,15 @@ Isolated scope:
 - "=" Used to create a two-way binding to an object that is passed into the directive
 - "&" Allows an external function to be passed into the directive and invoked
 
-<pre>scope: {
+```scope: {
   datasource: '=',
   action: '&'
-},
+}```
 
-<directive action="update()" datasource="products"></directive>
+```<directive action="update()" datasource="products"></directive>```
 
-<li ng-repeat="product in datasource">{{product.name}}</li>
-<button ng-click="action()"></pre>
+```<li ng-repeat="product in datasource">{{product.name}}</li>
+<button ng-click="action()">```
 
 <pre>angular.module('timetilleventApp')
   .directive('eventList', function () {
