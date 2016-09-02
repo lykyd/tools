@@ -240,6 +240,7 @@ Create a redirect folder link
 - i : insert mode
 - ECHAP :q! : force quit without saving
 - /u : search
+- Y puis pp : dupliquer ligne
 
 **Bower**
 - install component: bower install --save angular-toArrayFilter
