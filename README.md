@@ -334,9 +334,9 @@ Isolated scope:
   datasource: '=',
   action: '&'
 },
------
+
 <directive action="update()" datasource="products"></directive>
------
+
 <li ng-repeat="product in datasource">{{product.name}}</li>
 <button ng-click="action()"></pre>
 
