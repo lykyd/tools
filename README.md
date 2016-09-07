@@ -232,6 +232,7 @@ root: ???
 
 **Copy RSA key**
 - pbcopy < ~/.ssh/id_rsa.pub
+- xclip -selection clipboard < ~/.ssh/id_rsa.pub
 
 Create a redirect folder link
 - ln -s /origin-folder /shortcut
