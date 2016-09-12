@@ -127,6 +127,11 @@ automatically push submodules
 ## Command line
 
 **File creation and edition**
+- rm -rf folders : delete folder and all inside
+- rm -rf folders/* : delete all inside folder
+- rm -f folders/* : delete all files inside folder
+
+**File creation and edition**
 - touch file : create
 - less file : display
 - nano file : write
