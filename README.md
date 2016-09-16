@@ -22,7 +22,7 @@
 - git reset —-soft HEAD^ : go back to the previous but keep file changes
 - git reset -—hard HEAD^ : go back to the previous and all changes
 - git reset -—hard HEAD^^ : go back to 2 commits before
-- git commit —-amend -m “New message” : add to the previous commit
+- git commit —-amend -m “New message” + git push --force (if was pushed and alone on branch) : add to the previous commit
 
 **Hotfix**
 - checkout hotfix
@@ -135,6 +135,7 @@ automatically push submodules
 - touch file : create
 - less file : display
 - nano file : write
+- tail -f error-log : last 10 lines
 
 **SSH connexion**
 - ssh username@www.domain.com
@@ -199,6 +200,11 @@ or
 **Direct message**
 - ssh holly@wairarapa.local
 - osascript -e 'display dialog "What?"'
+
+**Get root permissions**
+- sudo su
+OR
+- su -
 
 **Restart Apache**
 - sudo apachectl configtest &&  sudo apachectl restart
