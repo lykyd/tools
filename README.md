@@ -22,7 +22,7 @@
 - git reset —-soft HEAD^ : go back to the previous but keep file changes
 - git reset -—hard HEAD^ : go back to the previous and all changes
 - git reset -—hard HEAD^^ : go back to 2 commits before
-- git commit —-amend -m “New message” + git push --force (if was pushed and alone on branch) : add to the previous commit
+- git commit —-amend -m “New message” + git push -—force (if was pushed and alone on branch) : add to the previous commit
 
 **Hotfix**
 - checkout hotfix
@@ -208,6 +208,8 @@ OR
 
 **Restart Apache**
 - sudo apachectl configtest &&  sudo apachectl restart
+OR
+- sudo /etc/init.d/apache2 restart
 
 **Start Mysql**
 - mysql -uroot
@@ -230,9 +232,7 @@ OR
 
 **File/folder owner**
 - sudo chown -R _www files/
-_www: drupal
-laudanum: user
-root: ???
+- sudo chown -R root:root <foldername>
 
 **Add RSA public key**
 - less ~/.ssh/id_rsa.pub : copy that
