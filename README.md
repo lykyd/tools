@@ -249,6 +249,9 @@ OR
 Create a redirect folder link
 - ln -s /origin-folder /shortcut
 
+**Create a soft link**
+- ln -s /existing-folder /symlink-folder
+
 **VIM**
 - i : insert mode
 - ECHAP :q! : force quit without saving
