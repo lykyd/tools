@@ -216,7 +216,8 @@ OR
 - mysql.server start
 
 **Command shortcut**
-- nano ~/.bash_profile
+- nano ~/.bash_profile (~/.profile on Ubuntu)
+- alias desk="cd ~/Desktop"
 - source ~/.bash_profile
 OR
 - nano ~/.ssh/config
