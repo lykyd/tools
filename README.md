@@ -229,6 +229,11 @@ OR
 - wget --recursive --page-requisites --domains ozwayrealty.com.au --no-parent www.ozwayrealty.com.au/
 
 **Patch**
+
+Create patch:
+- git format-patch -1 <sha>
+
+Apply patch:
 - download .patch file
 - patch -p1 < name.patch
 OR
