@@ -232,6 +232,8 @@ OR
 
 Create patch:
 - git format-patch -1 <sha>
+OR
+- git format-patch -1 <sha> <file>
 
 Apply patch:
 - download .patch file
