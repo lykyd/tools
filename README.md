@@ -24,18 +24,6 @@
 - git reset -—hard HEAD^^ : go back to 2 commits before
 - git commit —-amend -m “New message” + git push -—force (if was pushed and alone on branch) : add to the previous commit
 
-**Hotfix**
-- checkout hotfix
-- commit & push
-- checkout master
-- pull
-- merge hotfix & push
-- git tag 0.2.8
-- git push —-tags
-- checkout develop
-- pull
-- merge hotfix & push
-
 **Remote**
 - git remote show origin : see local and remote branches relationship
 - git remote prune origin : clean deleted remote branches
