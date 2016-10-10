@@ -219,9 +219,10 @@ OR
 **Patch**
 
 Create patch:
-- git format-patch -1 <sha>
+- git diff > name.patch (before commit)
+- git format-patch -1 \<sha\> (after commit)
 OR
-- git format-patch -1 <sha> <file>
+- git format-patch -1 \<sha\> \<file\>
 
 Apply patch:
 - download .patch file
