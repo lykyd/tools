@@ -137,6 +137,7 @@ automatically push submodules
 
 **Secure copy (use ssh)**
 - scp -P numport uname@urlname:/folder/file.sql ~/destination-folder/
+- scp -P 22 ~/.ssh/id_rsa.pub u84190778@deco-buzz.com:~/.ssh/
 - scp -r (folder and files inside)
 
 **Permissions setup**
