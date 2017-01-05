@@ -145,9 +145,15 @@ automatically push submodules
 - chmod 755 file.ext
 
 **MYSQL**
-- mysql -u your-user-name -p'Your-password' -h hostname : connect to the database provider
+- mysql -uyour-user-name -p'Your-password' -h hostname : connect to the database provider
 - ex: mysql -u root -p
+- mysql> status;
 - mysql> show databases; : show a list of installed databases
+- mysql> select database();
+- mysql> use <namedatabase>;
+- mysql> select user();
+- mysql> CREATE DATABASE <namedatabase>;
+- mysql> DROP DATABASE <namedatabase>;
 - mysqldump -uname -p dump.sql
 - drop existing
 - create schema
