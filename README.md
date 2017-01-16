@@ -154,7 +154,7 @@ automatically push submodules
 - mysql> select user();
 - mysql> CREATE DATABASE <namedatabase>;
 - mysql> DROP DATABASE <namedatabase>;
-- mysqldump -uname -p dump.sql
+- mysqldump -u username -p databasename > backup.sql
 - drop existing
 - create schema
 - mysql -uname -p dump.sql < db.sql
