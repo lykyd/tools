@@ -153,6 +153,7 @@ automatically push submodules
 - mysql> use <namedatabase>;
 - mysql> select user();
 - mysql> CREATE DATABASE <namedatabase>;
+- mysql> CREATE DATABASE <namedatabase> CHARACTER SET = UTF8;
 - mysql> DROP DATABASE <namedatabase>;
 - mysqldump -u username -p databasename > backup.sql
 - drop existing
