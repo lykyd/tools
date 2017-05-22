@@ -31,7 +31,9 @@
 **Rebase**
 - git fetch : get last commits from a remote (ex: origin/master) or a branch (ex: master)
 - git rebase : stash our local commit, pull the remote, add the local commit on top
-- git rebase —-continue  : continue rebase after fixing conflict (after git add)
+- git add <conflict files>
+- git rebase —-continue  : continue rebase after fixing conflict
+- git push -f
 
 **Interactive rebase**
 - git rebase -i HEAD^3
