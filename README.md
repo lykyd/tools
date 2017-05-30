@@ -19,10 +19,11 @@
 - remote: git push origin --delete develop.romain
 
 **Reset last commit**
-- git reset —-soft HEAD^ : go back to the previous but keep file changes
-- git reset -—hard HEAD^ : go back to the previous and all changes
-- git reset -—hard HEAD^^ : go back to 2 commits before
-- git commit —-amend -m “New message” + git push -—force (if was pushed and alone on branch) : add to the previous commit
+- git reset --soft HEAD^ : go back to the previous but keep file changes
+- git reset --hard HEAD^ : go back to the previous and all changes
+- git reset --hard HEAD^^ : go back to 2 commits before
+- git reset --hard origin/develop : reset local develop branch to origin/develop state
+- git commit --amend -m “New message” + git push -—force (if was pushed and alone on branch) : add to the previous commit
 
 **Remote**
 - git remote show origin : see local and remote branches relationship
@@ -32,7 +33,7 @@
 - git fetch : get last commits from a remote (ex: origin/master) or a branch (ex: master)
 - git rebase : stash our local commit, pull the remote, add the local commit on top
 - git add conflict_files
-- git rebase —-continue  : continue rebase after fixing conflict
+- git rebase --continue  : continue rebase after fixing conflict
 - git push -f
 
 **Interactive rebase**
@@ -50,7 +51,7 @@ Squash commits
   enter new commit message
 
 **Log, Compare and History**
-- git log —-oneline
+- git log --oneline
 - git diff master develop : compare 2 branches
 - git diff HEAD~2 : compare 2 last commits
 
@@ -76,10 +77,10 @@ Squash commits
 **Stash**
 stashes staged and unstaged tracked files.
 - git stash save
-- git stash save —-keep-index : stash unstaged files only
-- git stash save —-include-untracked : stash untracked files too
+- git stash save --keep-index : stash unstaged files only
+- git stash save --include-untracked : stash untracked files too
 - git stash list : display stash in queue
-- git stash list —-stat : more details on the stashed files
+- git stash list --stat : more details on the stashed files
 - git stash apply OR git stash apply stash@{2}: apply stash 0 by default except if we specify a number
 - git stash drop : to remove the stash 0 from the queue (after stash apply)
 - git stash pop : get last stash apply and drop it (if conflict you need to drop manually)
