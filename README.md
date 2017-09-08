@@ -115,6 +115,11 @@ automatically push submodules
 **Match remote with local branch**
 - git branch —-set-upstream-to=origin/remotebranch localbranch
 
+**Update previous commit**
+- git add <new-changes>
+- git commit --amend --no-edit : add to previous without new message
+- git push OR git push -f (if previous was pushed)
+
 ## Command line
 
 **File creation and edition**
