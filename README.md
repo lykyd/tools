@@ -121,6 +121,8 @@ automatically push submodules
 - git push OR git push -f (if previous was pushed)
 
 **Keep origin when Conflicts**
+- git pull -X theirs
+or if already in conflict
 - git checkout --theirs folder/files.php
 
 ## Command line
