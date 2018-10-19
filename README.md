@@ -120,6 +120,9 @@ automatically push submodules
 - git commit --amend --no-edit : add to previous without new message
 - git push OR git push -f (if previous was pushed)
 
+**Keep origin when Conflicts**
+- git checkout --theirs folder/files.php
+
 ## Command line
 
 **File creation and edition**
