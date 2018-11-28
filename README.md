@@ -1,5 +1,18 @@
 # Dev Tool
 
+## Docker
+**Helpers**
+- docker search <name> : find image
+- docker ps : see running container
+- docker inspect <friendly-name|container-id>
+- docker logs <friendly-name|container-id>
+**Launch container**
+- docker run <options> <image-name> : start container
+- docker run -d redis:3.2. : run in background, specify version
+- docker run -d --name redisHostPort -p 6379:6379 redis:latest : specify name and port
+- docker run -d --name redisDynamic -p 6379 redis:latest : random available port
+- docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis : mount a directory <host-dir>:<container-dir> to store logs and datas
+	
 ## Git
 **Init repo**
 - echo "# howhard" >> README.md
