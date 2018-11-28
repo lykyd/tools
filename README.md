@@ -76,6 +76,7 @@ Squash commits
 - git reset HEAD^ : remove last commit
 - git add + commit : first part
 - git add + commit : second part
+- git rebase --continue
 
 **Log, Compare and History**
 - git log --oneline
