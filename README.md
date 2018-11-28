@@ -6,12 +6,18 @@
 - docker ps : see running container
 - docker inspect <friendly-name|container-id>
 - docker logs <friendly-name|container-id>
+
 **Launch container**
 - docker run <options> <image-name> : start container
 - docker run -d redis:3.2. : run in background, specify version
 - docker run -d --name redisHostPort -p 6379:6379 redis:latest : specify name and port
 - docker run -d --name redisDynamic -p 6379 redis:latest : random available port
 - docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis : mount a directory <host-dir>:<container-dir> to store logs and datas
+- docker stop <name>
+
+**Build image**
+- docker build -t <name>
+- docker images : see built images
 	
 ## Git
 **Init repo**
@@ -50,7 +56,8 @@
 - git push -f
 
 **Interactive rebase**
-- git rebase -i HEAD^3
+- git rebase -i --root : all commits of the repo
+- git rebase -i HEAD^3 : act on 3 last commits
 Reorder commits
   reorder manually
 Rename commit
@@ -62,6 +69,13 @@ Split commits
 Squash commits
   change ‘pick’ to ’squash’ : will squash with upper commit in list
   enter new commit message
+  
+**Split last commit**
+- git rebase -i HEAD~1
+- change pick to edit
+- git reset HEAD^ : remove last commit
+- git add + commit : first part
+- git add + commit : second part
 
 **Log, Compare and History**
 - git log --oneline
