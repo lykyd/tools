@@ -18,7 +18,15 @@
 **Build image**
 - docker build -t <name>
 - docker images : see built images
-	
+
+**Data container**
+Container used to be a place to store/manage data.
+- docker create -v /config --name dataContainer busybox : create a Data container for storing config files
+- docker cp config.conf dataContainer:/config/ : copy files into the Data container
+- docker run --volumes-from dataContainer ubuntu ls /config : reference the Data container when launching other containers
+- docker export dataContainer > dataContainer.tar : export Data container
+- docker import dataContainer.tar
+
 ## Git
 **Init repo**
 - echo "# howhard" >> README.md
