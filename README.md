@@ -208,6 +208,7 @@ or if already in conflict
 - drop existing
 - create schema
 - mysql -uname -p dump.sql < db.sql
+- zcat database_name.sql.gz | mysql -uMYSQL_USER -pMYSQL_PASSWORD -hdb DATABASE_NAME : import db
 
 **Zip file**
 - gzip file name
