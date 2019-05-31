@@ -87,6 +87,7 @@ Squash commits
 - git rebase --continue
 
 **Change branch of origin**
+
 ex : changing branch feature/SN-1437 of origin, from develop to stage
 - git rebase -p -i --onto origin/stage origin/develop feature/SN-1437
 
