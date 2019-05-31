@@ -86,6 +86,10 @@ Squash commits
 - git add + commit : second part
 - git rebase --continue
 
+**Change branch of origin**
+ex : changing branch feature/SN-1437 of origin, from develop to stage
+- git rebase -p -i --onto origin/stage origin/develop feature/SN-1437
+
 **Log, Compare and History**
 - git log --oneline
 - git diff master develop : compare 2 branches
