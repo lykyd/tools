@@ -2,21 +2,21 @@
 
 ## Docker
 **Helpers**
-- docker search <name> : find image
+- docker search \<name\> : find image
 - docker ps : see running container
-- docker inspect <friendly-name|container-id>
-- docker logs <friendly-name|container-id>
+- docker inspect \<friendly-name|container-id\>
+- docker logs \<friendly-name|container-id\>
 
 **Launch container**
-- docker run <options> <image-name> : start container
+- docker run \<options\> \<image-name\> : start container
 - docker run -d redis:3.2. : run in background, specify version
 - docker run -d --name redisHostPort -p 6379:6379 redis:latest : specify name and port
 - docker run -d --name redisDynamic -p 6379 redis:latest : random available port
-- docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis : mount a directory <host-dir>:<container-dir> to store logs and datas
-- docker stop <name>
+- docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis : mount a directory \<host-dir\>:\<container-dir\> to store logs and datas
+- docker stop \<name\>
 
 **Build image**
-- docker build -t <name>
+- docker build -t \<name\>
 - docker images : see built images
 
 **Data container**
@@ -86,6 +86,11 @@ Squash commits
 - git add + commit : second part
 - git rebase --continue
 
+**Create local from existing remote branch**
+- git checkout -t origin/SN-1407 (\<remote name\>/\<branch name\>)
+OR
+- git checkout -b SN-1407 origin/SN-1407
+
 **Change branch of origin**
 
 ex : changing branch feature/SN-1437 of origin, from develop to stage
@@ -98,8 +103,8 @@ ex : changing branch feature/SN-1437 of origin, from develop to stage
 
 **Cherry pick**
 - git branch merge-request (create a branch where pick commits)
-- git cherry-pick <commitnumber>
-- OR git cherry-pick -n <commitnumber> : —no-commit option
+- git cherry-pick \<commitnumber\>
+- OR git cherry-pick -n \<commitnumber\> : —no-commit option
 - git reset (unstage all commit change)
 - git checkout (what you don’t want)
 - git commit and push
@@ -332,7 +337,7 @@ Create a redirect folder link
 - drush dl views --destination=profiles/myprofile/modules/views
 - drush upwd --password="givememypasswordback" "admin" : reset password
 - drush updb : update database
-- drush dis <modulename> : disable module
+- drush dis \<modulename\> : disable module
 - drush pm-list --type=Module --status=enabled : list module
 - drush up rules : update Rules module
 - drush up drupal : update Drupal Core
