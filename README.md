@@ -173,7 +173,12 @@ or if already in conflict
 
 ## Command line
 
-**File creation and edition**
+**File and directories**
+- disk space : df -h
+- count files : ls | wc -l
+- files space : ls -lh
+- display directories : ls -d */
+- force delete : rm -f filename*
 - rm -rf folders : delete folder and all inside
 - rm -rf folders/* : delete all inside folder
 - rm -f folders/* : delete all files inside folder
